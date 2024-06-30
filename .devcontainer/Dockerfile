@@ -18,6 +18,4 @@ RUN echo 'tmux new-session -s 11' >> ~/.bashrc && \
     echo 'tmux send-keys -t 11 "nix-daemon" C-m' >> ~/.bashrc && \
     echo 'tmux detach' >> ~/.bashrc
 
-WORKDIR /home/ubuntu/
-
-USER ubuntu
+RUN echo 'ubuntu:123' | chpasswd
