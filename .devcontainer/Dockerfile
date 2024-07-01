@@ -12,6 +12,7 @@ RUN curl -L https://nixos.org/nix/install | sh -s -- --daemon
 
 #RUN useradd -m -s /bin/bash ubuntu && echo 'ubuntu:123' | chpasswd && usermod -aG sudo ubuntu
 RUN mkdir -p ~/.config/nix && echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf
+RUN mkdir -p /home/ubuntu/.config/nix && echo "experimental-features = nix-command flakes" >> /home/ubuntu/.config/nix/nix.conf
 
 # Directly add tmux commands to.bashrc with each command on a separate line
 RUN echo 'tmux new-session -s 11' >> ~/.bashrc && \
